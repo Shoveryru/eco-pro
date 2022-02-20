@@ -1,6 +1,14 @@
-﻿.p-card {
+﻿:root {
+    --green-color: rgba(25, 255, 25, .45);
+    --blue-color: rgba(25, 115, 255, .45);
+    --purple-color: rgba(110, 5, 220, .45);
+    --border-color: rgba(0, 0, 0, .15);
+    --dark-green: #1d7000;
+}
+
+.p-card {
     transition-duration: 0.5s;
-    border: rgba(0, 0, 0, 0.15) solid 1px;
+    border: var(--border-color) solid 1px;
     border-radius: 5px;
     height: min-content;
     margin: 15px;
@@ -36,20 +44,19 @@
 }
 
 .first-era:hover {
-    box-shadow: 0 0 15px 3px rgba(25, 255, 25, .45);
+    box-shadow: 0 0 15px 3px var(--green-color);
 }
 
 .second-era:hover {
-    box-shadow: 0 0 15px 3px rgba(25, 115, 255, 0.45);
+    box-shadow: 0 0 15px 3px var(--blue-color);
 }
 
 .third-era:hover {
-    box-shadow: 0 0 15px 3px rgba(110, 5, 220, 0.45);
+    box-shadow: 0 0 15px 3px var(--purple-color);
 }
 
-.title h2 {
-    color: #1d7000;
-    font-size: 2vw;
+.title h3 {
+    color: var(--dark-green);
 }
 
 .row {
