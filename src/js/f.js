@@ -1,4 +1,6 @@
-﻿const div = 'div';
+﻿/* DOM naming, attributes and others */
+
+const div = 'div';
 const p = 'p';
 const img = 'img'
 const empty = '';
@@ -9,6 +11,22 @@ const colTitleClassName = 'block';
 const cardTitleClassName = 'p-card-body';
 const onclickAttr = 'onclick';
 const insertPosition = 'beforeend';
+// First era block ID and part of class name.
+const firstEraName = 'first-era';
+// Second era block ID and part of class name.
+const secondEraName = 'second-era';
+// Third era block ID and part of class name.
+const thirdEraName = 'third-era';
+// Picked profession block ID.
+const pickedIdName = 'picked';
+
+/* Card's class name */
+
+const firstEraCardClassName = cardClassName + ' ' + firstEraName;
+const secondEraCardClassName = cardClassName + ' ' + secondEraName;
+const thirdEraCardClassName = cardClassName + ' ' + thirdEraName;
+
+/* Arrays settings */
 
 const emptyArray = 0;
 const firstEraId = 1;
@@ -19,27 +37,25 @@ const thirdEraId = 3;
 const thirdEraArrayIndex = 2;
 const firstElementArrayIndex = 0;
 
-// Classes name for DOM element generation.
-const firstEraName = 'first-era';
-const secondEraName = 'second-era';
-const thirdEraName = 'third-era';
-const pickedIdName = 'picked';
-const firstEraCardClassName = cardClassName + ' ' + firstEraName;
-const secondEraCardClassName = cardClassName + ' ' + secondEraName;
-const thirdEraCardClassName = cardClassName + ' ' + thirdEraName;
+/* Func names */
 
-// Func names for DOM element generation.
 const addProfessionFuncName = 'addProfession(this)';
 const deleteProfessionFuncName = 'deleteProfession(this)';
 const clearAllFuncName = 'clearAll()';
 
 // TODO: Change before deploying!
+
+// First part of url to images.
 const baseUrl = '../src/icons/';
 
-// Variables
+/* Variables */
+
+// Picked professions by user.
 let user = [];
+// List of available professions.
 let availableProfessions = [];
 
+/* Actions */
 
 // ACTION: Add profession to user list and initialize redraw.
 function addProfession(element) {
@@ -58,6 +74,8 @@ function deleteProfession(element) {
   refreshAvailableProfessions(profession, false);
   redrawAvailableBlock();
 }
+
+/* Functions */
 
 // Start up func aka hello world.
 function initializeApplication() {

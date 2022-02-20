@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba94e7d8-bfd2-4043-b755-f36d3972cd4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.eco-pro.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eco-pro.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="ba94e7d8-bfd2-4043-b755-f36d3972cd4f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645360468885</updated>
       <workItem from="1645360470717" duration="428000" />
-      <workItem from="1645365297986" duration="2065000" />
+      <workItem from="1645365297986" duration="3074000" />
     </task>
     <servers />
   </component>
