@@ -1,0 +1,14 @@
+.logo {
+    height: 69px;
+    padding: 5px;
+}
+
+header {
+    background: #0a6ec8;
+    display: inline-block;
+    width: 100%;
+}
+
+div.container-fluid {
+    padding-inline: 12%;
+}
