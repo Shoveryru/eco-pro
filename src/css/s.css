@@ -62,10 +62,9 @@ div.col {
 .col-items img {
     width: 64px;
     height: 64px;
-    border: 1px solid rgba(0, 0, 0, .1);
     transition-duration: .5s;
     margin-bottom: 5px;
-    position: relative;
+    margin-right: 5px;
 }
 
 .col-items img:hover {

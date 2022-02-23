@@ -4,11 +4,7 @@ const div = 'div';
 const p = 'p';
 const img = 'img'
 const empty = '';
-const cardClassName = 'p-card';
-const rowClassName = 'row';
-const cardImageClassName = 'p-card-img';
-const colTitleClassName = 'block';
-const cardTitleClassName = 'p-card-body';
+const imgClassName = 'img-thumbnail';
 const onclickAttr = 'onclick';
 const insertPosition = 'beforeend';
 // First era block ID and part of class name.
@@ -19,12 +15,6 @@ const secondEraName = 'second-era';
 const thirdEraName = 'third-era';
 // Picked profession block ID.
 const pickedIdName = 'picked';
-
-/* Card's class name */
-
-const firstEraCardClassName = cardClassName + ' ' + firstEraName;
-const secondEraCardClassName = cardClassName + ' ' + secondEraName;
-const thirdEraCardClassName = cardClassName + ' ' + thirdEraName;
 
 /* Arrays settings */
 
@@ -135,8 +125,8 @@ function refreshProfessionsBlock(source, target, eraseInnerHtml = true, addingFu
   if (source.length === emptyArray) return;
   
   source.forEach(function (profession) {
-    let cardDOMElement = createCard(profession, addingFunctionMode);
-    targetDOMElement.insertAdjacentElement(insertPosition, cardDOMElement);
+    let professionDOMElement = createCard(profession, addingFunctionMode);
+    targetDOMElement.insertAdjacentElement(insertPosition, professionDOMElement);
   })
 }
 
@@ -151,49 +141,25 @@ function getTargetDOMElement(target, eraseInnerHtml) {
 
 // Create block with card
 function createCard(profession, addingFunctionMode) {
-  let rootCardDivDOMElement = document.createElement(div);
-
-  let rowDivDOMElement = document.createElement(div);
-
-  let cardImageColDOMElement = document.createElement(div);
-  let cardImageDOMElement = document.createElement(img);
-
-  let cardTitleColDOMElement = document.createElement(div);
-  let cardTitleDivDOMElement = document.createElement(div);
-  let cardTitleParaDOMElement = document.createElement(p);
-
-  cardTitleParaDOMElement.innerText = profession.title;
-  cardTitleDivDOMElement.className = cardTitleClassName;
-  cardTitleDivDOMElement.insertAdjacentElement(insertPosition, cardTitleParaDOMElement);
-  cardTitleColDOMElement.className = colTitleClassName;
-  cardTitleColDOMElement.insertAdjacentElement(insertPosition, cardTitleDivDOMElement);
-
-  cardImageDOMElement.src = createImagePath(profession.iconName);
-  cardImageDOMElement.alt = profession.title;
-  cardImageColDOMElement.className = cardImageClassName;
-  cardImageColDOMElement.insertAdjacentElement(insertPosition, cardImageDOMElement);
-
-  rowDivDOMElement.className = rowClassName;
-  rowDivDOMElement.insertAdjacentElement(insertPosition, cardImageColDOMElement);
-  rowDivDOMElement.insertAdjacentElement(insertPosition, cardTitleColDOMElement);
-
-  rootCardDivDOMElement.className = getEraClassNameForCard(profession.era);
-  rootCardDivDOMElement.setAttribute(onclickAttr, addingFunctionMode ? addProfessionFuncName : deleteProfessionFuncName);
-  rootCardDivDOMElement.id = profession.id;
-  rootCardDivDOMElement.insertAdjacentElement(insertPosition, rowDivDOMElement);
-
-  return rootCardDivDOMElement;
+  let imgDomElement = document.createElement(img);
+  imgDomElement.src = createImagePath(profession.iconName);
+  imgDomElement.alt = profession.title;
+  imgDomElement.className = imgClassName;
+  imgDomElement.id = profession.id;
+  imgDomElement.setAttribute(onclickAttr, addingFunctionMode ? addProfessionFuncName : deleteProfessionFuncName);
+  
+  return imgDomElement;
 }
 
 // Return class name depending on item era.
-function getEraClassNameForCard(era, availableRenderingMode = true) {
+function getEraClassNameForCard(era) {
   switch (era) {
     case firstEraId:
-      return availableRenderingMode ? firstEraCardClassName : firstEraName;
+      return firstEraName;
     case secondEraId:
-      return availableRenderingMode ? secondEraCardClassName : secondEraName;
+      return secondEraName;
     case thirdEraId:
-      return availableRenderingMode ? thirdEraCardClassName : thirdEraName;
+      return thirdEraName;
     case null:
       return empty;
   }
