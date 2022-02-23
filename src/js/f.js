@@ -80,10 +80,10 @@ function redrawUserPickedBlock() {
     createEmptyParagraph();
     return;
   }
-  
+
   let sortedProfessions = sortProfessionsByEra(user);
   let redrawStarted = false;
-  
+
   sortedProfessions.forEach(function (group) {
     if (redrawStarted) {
       refreshProfessionsBlock(group, pickedIdName, false, false);
@@ -125,11 +125,11 @@ function sortProfessionsByEra(source) {
 // Source - professions list for rendering.
 // Target - Id of DOM element for rendering.
 function refreshProfessionsBlock(source, target, eraseInnerHtml = true, addingFunctionMode = true) {
-  if (target === undefined || target === null ) return;
+  if (target === undefined || target === null) return;
   let targetDOMElement = getTargetDOMElement(target, eraseInnerHtml);
-  
+
   if (source.length === emptyArray) return;
-  
+
   source.forEach(function (profession) {
     let professionDOMElement = createCard(profession, addingFunctionMode);
     targetDOMElement.insertAdjacentElement(insertPosition, professionDOMElement);
@@ -153,7 +153,7 @@ function createCard(profession, addingFunctionMode) {
   imgDomElement.className = imgClassName;
   imgDomElement.id = profession.id;
   imgDomElement.setAttribute(onclickAttr, addingFunctionMode ? addProfessionFuncName : deleteProfessionFuncName);
-  
+
   return imgDomElement;
 }
 
@@ -161,7 +161,7 @@ function createCard(profession, addingFunctionMode) {
 function createEmptyParagraph() {
   let para = document.createElement(p);
   para.innerText = 'Пока что тут ничего нет :С';
-  
+
   let pickedItemsBlock = document.getElementById(pickedIdName);
   pickedItemsBlock.innerHTML = empty;
   pickedItemsBlock.insertAdjacentElement(insertPosition, para);
@@ -198,7 +198,7 @@ function refreshAvailableProfessions(profession, addingFunctionMode) {
       availableProfessions = availableProfessions.filter(p => p.id !== id);
     });
   } else {
-    profession.exclusion.forEach(function (id){
+    profession.exclusion.forEach(function (id) {
       let excludedProfession = data.find(p => p.id === id);
       availableProfessions.push(excludedProfession);
     });
