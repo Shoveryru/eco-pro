@@ -70,14 +70,20 @@ function deleteProfession(element) {
 // Start up func aka hello world.
 function initializeApplication() {
   availableProfessions = data;
+  redrawUserPickedBlock();
   redrawAvailableBlock();
 }
 
 // Initialize redrawing picked professions by user block.
 function redrawUserPickedBlock() {
+  if (user.length === 0) {
+    createEmptyParagraph();
+    return;
+  }
+  
   let sortedProfessions = sortProfessionsByEra(user);
   let redrawStarted = false;
-
+  
   sortedProfessions.forEach(function (group) {
     if (redrawStarted) {
       refreshProfessionsBlock(group, pickedIdName, false, false);
@@ -149,6 +155,16 @@ function createCard(profession, addingFunctionMode) {
   imgDomElement.setAttribute(onclickAttr, addingFunctionMode ? addProfessionFuncName : deleteProfessionFuncName);
   
   return imgDomElement;
+}
+
+// Create <p> element with text when block of items is empty.
+function createEmptyParagraph() {
+  let para = document.createElement(p);
+  para.innerText = 'Пока что тут ничего нет :С';
+  
+  let pickedItemsBlock = document.getElementById(pickedIdName);
+  pickedItemsBlock.innerHTML = empty;
+  pickedItemsBlock.insertAdjacentElement(insertPosition, para);
 }
 
 // Return class name depending on item era.
