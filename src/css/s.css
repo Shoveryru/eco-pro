@@ -1,4 +1,18 @@
-﻿div.row {
+﻿@font-face {
+    font-family: "PT Sans Narrow";
+    src: url('../../fonts/PTSansNarrow-Regular.ttf');
+}
+@font-face {
+    font-family: "PT Sans Narrow";
+    font-weight: bold;
+    src: url("../../fonts/PTSansNarrow-Bold.ttf");
+}
+
+body {
+    font-family: "PT Sans Narrow", sans-serif;
+}
+
+div.row {
     margin-top: 10px;
 }
 
@@ -50,6 +64,8 @@ div.col {
     height: 64px;
     border: 1px solid rgba(0, 0, 0, .1);
     transition-duration: .5s;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 .col-items img:hover {
